@@ -1,105 +1,86 @@
 <!doctype html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <title>ApolloBoilerplate by Arun Vijayarengan</title>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+<head>
+  <meta charset="utf-8">
+  <title>Async by Arun Vijayarengan</title>
 
-    <link href="assets/css/style.min.css" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <script src="assets/components/modernizr/modernizr.js"></script>
-  </head>
-  <body>
+  <link href="assets/css/style.min.css" rel="stylesheet">
 
-    <header class="header" role="banner">
-      <div class="logo">
-        <a href="/">
-          <p>Logo</p>
-        </a>
-      </div>
-      <nav class="nav" role="navigation">
-        <ul>
-          <li>
-            <a href="/"></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+  <script src="assets/components/modernizr/modernizr.js"></script>
+</head>
 
-    <main class="main" role="main">
-       
+<body>
 
-   <h1>Testing Boilerplate</h1>
-
-    </main>
-
-    <aside class="sidebar" role="complementary">
-
-    </aside>
-
-    <footer class="footer" role="contentinfo">
-          <p>Footer</p>
-    </footer>
-
-    <script src="assets/components/jquery/jquery.min.js"></script>
-    <script src="assets/js/scripts.min.js"></script>
-
-    <script>
-      
-      function loadJSON(){
-            var data_file = "/sample.json";
-            var xhr = new XMLHttpRequest();
-            //onreadystatechange - is a callback function called when readyState property changes
-            xhr.onreadystatechange = function(){
-              debugger; // state changes 5 times
-              /*
-                readyState - Holds the status of the XMLHttpRequest. Changes from 0 to 4: 
-                0: request not initialized 
-                1: server connection established
-                2: request received 
-                3: processing request 
-                4: request finished and response is ready
-              */
-              if (xhr.readyState == 4  && xhr.status ==200 ){
-                  //When readyState is 4 and status is 200, the response is ready
-                    //xhr.status	//200: "OK"  -- 404: Page not found
-                  
-                  // JSON.parse to parse JSON data
-                  var jsonObj = JSON.parse(xhr.responseText);
-                  console.log(jsonObj);
-                  //xhr.responseText - 	get the response data as a string
-                  //xhr.responseXML - 	get the response data as XML data
-
-                  // jsonObj variable now has the entire JSON 
-                  //debugger;
-                  
-                
-              }
-                  
-                console.log(xhr.status);
-                            
-            }
-			
-            // Send a Request to Server
-            //Syntax: xhr.open(type_of_request, url, async? )
-            xhr.open("GET", data_file, true);
-            //Sends the request to the server (used for GET)
-            xhr.send();
-
-           //for POST Method the syntax is: 
-           //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-           //xhr.send("fname=Arun&lname=Vijayarengan"); 
-         }
-		
-        loadJSON()
-
-        //Complete list Ajax events here
-        // http://www.w3schools.com/ajax/ajax_xmlhttprequest_onreadystatechange.asp
-
+  
+  <div class="main" role="main">
     
-    </script>
-  </body>
+    <h1>Async Communication</h1>
+    <button type="button" onclick="loadJSON()">Load Data</button>
+  </div>
+
+  
+  <script>
+    function loadJSON() {
+      var json_url = "/sample.json";
+      var xhr = new XMLHttpRequest();
+      //onreadystatechange - is a callback function called when readyState property changes
+      //Before request initialized -- readyState is 0;
+      console.log(xhr.readyState);
+      xhr.onreadystatechange = function () {
+        // state changes 5 times
+        /*
+          readyState - Holds the status of the XMLHttpRequest. Changes from 0 to 4: 
+          0: request not initialized 
+          1: server connection established
+          2: request received 
+          3: processing request 
+          4: request finished and response is ready
+        */
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          //When readyState is 4 and status is 200, the response is ready
+          //xhr.status	//200: "OK"  -- 404: Page not found
+
+          // JSON.parse to parse JSON data
+          var jsonObj = JSON.parse(xhr.response);
+          console.log(jsonObj);
+          //xhr.responseText - 	get the response data as a string
+          //xhr.responseXML - 	get the response data as XML data
+
+          // jsonObj variable now has the entire JSON 
+          //debugger;
+
+
+        }
+
+        console.log(xhr.status);
+
+      }
+
+      // Send a Request to Server
+      //Syntax: xhr.open(type_of_request, url, async? )
+      xhr.open("GET", json_url, true);
+      //Sends the request to the server (used for GET)
+      xhr.send();
+
+      //for POST Method the syntax is: 
+      //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      //xhr.send("fname=Arun&lname=Vijayarengan"); 
+    }
+
+    //Complete list Ajax events here
+    // http://www.w3schools.com/ajax/ajax_xmlhttprequest_onreadystatechange.asp
+  </script>
+
+
+  <script src="assets/components/jquery/jquery.min.js"></script>
+  <script src="assets/js/scripts.min.js"></script>
+
+
+</body>
+
 </html>
