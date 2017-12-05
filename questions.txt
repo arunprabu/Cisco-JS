@@ -1,0 +1,153 @@
+Objective Type Questions
+======================
+1. What's not a primitive Data type?
+  a) String
+  b) Object 
+  c) Boolean
+  d) Undefined
+  Answer: b)
+
+2) How to include external JS?
+  a) <script link="script1.js"></script>
+  b) <script href="script1.js"></script>
+  c) <script src="script1.js"></script>
+  d) <script> 
+      // code 
+     </script>
+
+  Answer c)
+
+3) What's the output?
+    var retirementAge = 60;
+    getServiceLeft(32);
+    var getServiceLeft = function(age){
+      console.log(retirementAge-age);
+    }
+   a) 60
+   b) 28
+   c) 32
+   d) TypeError: getServiceLeft is not a function
+  Answer: d)
+
+4) How can you get the total number of arguments passed to a function?
+  a) Using args.length property
+  b) Using arguments.length property
+  c) Both of the above.
+  d) None of the above.
+  Answer: b)
+
+5) What's the value of n?
+  var n = (function(x) {
+            return x*x;
+          }(10));
+
+  a) error
+  b) x - not defined error 
+  c) 10
+  d) 100
+  Answer: d)
+
+6) Consider the following code snippet
+    profile.getExperience(x, y);
+    Which is an equivalent code for the above code snippet?
+
+    a) profile.getExperience(x) && profile.getExperience(y);
+    b) profile["getExperience"](x, y);
+    c) profile(getExperience)["x","y"];
+    d) profile.getExperience(x && y);
+    Answer: b)
+
+7) var profile = {
+
+   }
+
+   What's the output of the following? 
+   console.log(profile.address)
+
+   a) Object is empty
+   b) ReferenceError - profile is not defined
+   c) ReferenceError - address in not defined
+   d) undefined
+  Answer d)
+
+8) Why do we use try {} block?
+  a) is used to try the code block for errors
+  b) is used to catch the errors in code block
+  c) customizing the error caught
+  d) None of the above
+  Answer a)
+
+9) What's correct?
+  a) <p onkeyup="testKeyup()">Type</p>
+  b) <button type="submit" onsubmit="formSubmit()">Submit</button>
+  c) <p onclick="testClick()">Click me</p>
+  d) All the above
+  Answer d)
+
+10) How to detach event listener?
+  a) using removeEventListener
+  b) using deleteEventListener
+  c) using detachEventListener
+  d) using removeEvent 
+  Answer a)
+
+11) What's this? ``
+  a) Object literal
+  b) Array literal
+  c) Template / String Literal 
+  d) None of the above
+  Answer: c)
+
+12) What's the output?
+  function getValue(condition) {
+    if (condition) {
+      let value = "blue";
+      return value;
+    } 
+    return value;
+  }
+  getValue(false);
+
+  a) blue
+  b) "blue"
+  c) "ReferenceError: value is not defined
+  d) undefined
+  Answer: c)
+
+13) How to write a constant in ECMAScript 2015?
+  a) var WEEK_DAYS = 7;
+  b) const WEEK_DAYS = 7;
+  c) const WEEK_DAYS;
+     WEEK_DAYS = 7;
+  d) WEEK_DAYS = 7;
+  Answer b)
+
+14) What's the value of i in console.log?
+  for (var i = 0; i < 10; i++) {
+    //
+  }
+  console.log(i); 
+  a) 0
+  b) 9
+  c) 10
+  d) undefined;
+  Answer: c)
+
+15) What's the output?
+  let value = 5;
+  function getValue() {
+    var t = value+1;
+    return t;
+  }
+  function add(first, second = getValue()) {
+      return first + second;
+  }
+  console.log(add(1));
+  
+  a) 1
+  b) 2
+  c) 6
+  d) 7
+  Answer: d)
+
+
