@@ -1,0 +1,1 @@
+document.getElementById("heading").innerText = "Welcome to my first app";

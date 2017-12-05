@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <button type="button" onclick="onLoginClick(event)" id="loginBtn">
+    Login
+  </button>
+
+  <p>testing 1</p>
+  <p>testing 2</p>
+
+  <script>
+    document.querySelector("body").addEventListener("click", onBodyClick);
+
+    function onLoginClick(event){
+      console.log("login clicked"); 
+      event.preventDefault();
+      event.stopPropagation();
+      event.target.innerText = "Logged In";
+    
+      event.target.parentElement.querySelectorAll('p')[0].innerText = "Tested";
+    }
+
+    function onBodyClick( e ){
+      console.log("Body clicked");
+      console.log(e)
+    }
+  </script>
+</body>
+</html>

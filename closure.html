@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<script>
+function createCallback(index) {
+
+	return function() {
+		console.log(index);
+	}
+}
+
+function timer(count) {
+	for(var i=0;i<count;i++) {
+		setTimeout(function() {
+			console.log(i);
+		}, 1);
+	}
+}
+
+function timerRight(count) {
+	for(var i=0;i<count;i++) {
+		setTimeout(createCallback(i), 1000);
+	}
+}
+
+timerRight(5);
+</script>
+</body>
+</html>

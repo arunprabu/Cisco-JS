@@ -1,0 +1,90 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>ApolloBoilerplate by Arun Vijayarengan</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link href="assets/css/style.min.css" rel="stylesheet">
+
+    <script src="assets/components/modernizr/modernizr.js"></script>
+  </head>
+  <body>
+
+    <header class="header" role="banner">
+      <div class="logo">
+        <a href="/">
+          <p>Logo</p>
+        </a>
+      </div>
+      <nav class="nav" role="navigation">
+        <ul>
+          <li>
+            <a href="/"></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main" role="main">
+       
+
+   <h1>Testing Boilerplate</h1>
+
+    </main>
+
+    <aside class="sidebar" role="complementary">
+
+    </aside>
+
+    <footer class="footer" role="contentinfo">
+          <p>Footer</p>
+    </footer>
+
+    <script src="assets/components/jquery/jquery.min.js"></script>
+    <script src="assets/js/scripts.min.js"></script>
+
+    <script>
+        
+        
+        
+        $(document).on("jsonLoadedEvent", function(){
+            console.log("Into the custom event") ;
+        });
+
+      /* jQuery Promise */  
+        var jqxhr = $.getJSON( "/sample.json", function() {
+            //immediate callback -- only if success
+            console.log( "success" );
+            
+            $(document).trigger("jsonLoadedEvent");
+        })
+        .done(function() {
+            //when done -- only if results in success
+            console.log( "done" );
+        })
+        .fail(function() {
+            //if fails
+            console.log( "fails" );
+        })
+        .always(function() {
+            //complete
+            console.log( "always" );
+        });
+        
+        // Perform other work here ...
+        
+        // Set another completion function for the request above
+        jqxhr.complete(function() {
+          console.log( "complete" );
+        });
+
+        
+
+    
+    </script>
+  </body>
+</html>

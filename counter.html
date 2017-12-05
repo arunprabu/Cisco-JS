@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+</head>
+
+<body>
+<script>
+    function Counter(initValue){
+
+        var count = initValue;
+        var numInvoke = count * 2;
+        function increment() {
+            numInvoke++;
+            count++;
+        }
+        function decrement() {
+            numInvoke--;
+            count--;
+        }
+        function value() {
+            return count;
+        }
+
+        return {
+            incr : increment,
+            decr : decrement,
+            value : value
+        };
+    }
+ </script>
+</body>
+
+</html>
