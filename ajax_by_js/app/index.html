@@ -28,7 +28,9 @@
       //onreadystatechange - is a callback function called when readyState property changes
       //Before request initialized -- readyState is 0;
       console.log(xhr.readyState);
+      debugger;
       xhr.onreadystatechange = function () {
+        debugger;
         // state changes 5 times
         /*
           readyState - Holds the status of the XMLHttpRequest. Changes from 0 to 4: 
